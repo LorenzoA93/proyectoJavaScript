@@ -1,18 +1,3 @@
-class Cliente {
-    constructor (nombre, apellido, ndeOrden){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.ndeOrden = ndeOrden;
-    }
-}
-
-const clienteJuan = new Cliente (Juan, Perez, 0130);
-const clientePedro = new Cliente (Pedro, Gonzales, 0131);
-const clienteGustavo = new Cliente (Gustavo, Rodriguez, 0132);
-const clienteLucas = new Cliente (Lucas, Sequeira, 0133);
-
-const arrayClientes = [clienteJuan, clientePedro, clienteGustavo, clienteLucas];
-
 class Producto{
     constructor(producto, ndeOrden, precio){
         this.producto = producto;
@@ -21,12 +6,16 @@ class Producto{
     }
 }
 
-const guantesProtectores = new Producto (guantes, 0130, 500);
-const cascoProtector = new Producto (casco, 0131, 1000);
-const arnesDeSeguridad = new Producto (arnes, 0132, 1500);
-const gafasProtectoras = new Producto (gafas, 0133, 800);
+const guantesProtectores = new Producto ("guantes", 130, 500);
+const cascoProtector = new Producto ("casco", 131, 1000);
+const arnesDeSeguridad = new Producto ("arnes", 132, 1500);
+const gafasProtectoras = new Producto ("gafas", 133, 800);
 
-const arrayProductos = [gafasProtectoras, cascoProtector, arnesDeSeguridad, gafasProtectoras];
+const arrayProductos = [guantesProtectores, cascoProtector, arnesDeSeguridad, gafasProtectoras];
+
+//Introduccion
+
+alert("Bienvenido a MDS Ezeiza, los productos de Seguridad Laboral. Los productos a ofrecer son: \n a)Guantes(130) \n b)Casco de Seguridad (131) \n c)Arnes de Seguridad (132) \n d)Gafas Protectoras(133) ");
 
  //funcion consulta
 
@@ -34,4 +23,6 @@ const arrayProductos = [gafasProtectoras, cascoProtector, arnesDeSeguridad, gafa
     let ndeOrden = parseInt (prompt("Ingrese el numero de orden para consultar el precio:"));
     let producto = arrayProductos.find (Producto => Producto.ndeOrden === ndeOrden);
     console.log (producto);
+    alert("el precio de su producto consultado es: " + producto.precio + "$");
  }
+producto()
