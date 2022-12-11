@@ -1,28 +1,37 @@
-let nombreDelPrimerOperario = prompt ("Ingrese el nombre del Primer Operario");
-let talleDelPrimerOperario = parseInt(prompt ("Ingrese el talle del Primer Operario"));
-let nombreDelSegundoOperario = prompt ("Ingrese el nombre del Segundo Operario");
-let talleDelSegundoOperario = parseInt(prompt ("Ingrese el talle del Segundo Operario"));
-let nombreDelTercerOperario = prompt ("Ingrese el nombre del Tercer Operario");
-let talleDelTercerOperario = parseInt(prompt ("Ingrese el talle del Tercer Operario"));
-let trabajadores = {
-    primero: nombreDelPrimerOperario,
-    segundo: nombreDelSegundoOperario,
-    tercero: nombreDelTercerOperario,
-};
-for (let clave in trabajadores){
-    console.log("El nombre del operario es: " + trabajadores[clave])
-};
-function promedio(valorA, valorB, valorC) {
-    let resultado = (valorA + valorB +valorC) / 3;
-    return resultado;
-};
-let resultadoPromedio = promedio (talleDelPrimerOperario, talleDelSegundoOperario, talleDelTercerOperario);
-function calculoPromedio(resultadoPromedio) {
-    if (resultadoPromedio > 60) {
-        return "El resultado es demaciado alto, prueba ingresando de nuevo los datos"
-    }else{
-        return "El resultado es correcto, se enviará la orden a Recursos Humanos"
+class Cliente {
+    constructor (nombre, apellido, ndeOrden){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.ndeOrden = ndeOrden;
     }
-};
-let promedios = calculoPromedio (resultadoPromedio);
-console.log(promedios);
+}
+
+const clienteJuan = new Cliente (Juan, Perez, 0130);
+const clientePedro = new Cliente (Pedro, Gonzales, 0131);
+const clienteGustavo = new Cliente (Gustavo, Rodriguez, 0132);
+const clienteLucas = new Cliente (Lucas, Sequeira, 0133);
+
+const arrayClientes = [clienteJuan, clientePedro, clienteGustavo, clienteLucas];
+
+class Producto{
+    constructor(producto, ndeOrden, precio){
+        this.producto = producto;
+        this.ndeOrden = ndeOrden;
+        this.precio = precio;
+    }
+}
+
+const guantesProtectores = new Producto (guantes, 0130, 500);
+const cascoProtector = new Producto (casco, 0131, 1000);
+const arnesDeSeguridad = new Producto (arnes, 0132, 1500);
+const gafasProtectoras = new Producto (gafas, 0133, 800);
+
+const arrayProductos = [gafasProtectoras, cascoProtector, arnesDeSeguridad, gafasProtectoras];
+
+ //funcion consulta
+
+ function producto() {
+    let ndeOrden = parseInt (prompt("Ingrese el numero de orden para consultar el precio:"));
+    let producto = arrayProductos.find (Producto => Producto.ndeOrden === ndeOrden);
+    console.log (producto);
+ }
