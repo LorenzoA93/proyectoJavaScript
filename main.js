@@ -35,7 +35,7 @@ if(localStorage.getItem("pedidos")){
 
 const contenedorProductos = document.getElementById("contenedorProductos");
 
-//Targetas
+//Tarjetas
 
 const muestraDeProductos = () => {
     productos.forEach( producto => {
@@ -46,7 +46,7 @@ const muestraDeProductos = () => {
                     <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
                     <div class= "card-body text-center">
                         <h5>${producto.nombre}</h5>
-                        <p> ${producto.precio} </p>
+                        <p> ${"$"+producto.precio} </p>
                         <button class="btn colorBoton" id="boton${producto.id}" > Agregar Pedido </button>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const mostrarPedidos = () => {
                     <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
                     <div class= "card-body text-center">
                         <h5>${producto.nombre}</h5>
-                        <p> ${producto.precio} </p>
+                        <p> ${"$"+producto.precio} </p>
                         <p> ${producto.cantidad} </p>
                         <button class="btn colorBoton" id="eliminar${producto.id}" > Eliminar Producto </button>
                     </div>
