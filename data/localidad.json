@@ -1,0 +1,7 @@
+{
+    "ubicacion":[
+        {"id":1, "direccion":"San Martin 700", "localidad":"Cañuelas", "provincia":"Buenos Aires"},
+        {"id":2, "direccion":"Alberdi 300", "localidad":"Lanus", "provincia":"Buenos Aires"},
+        {"id":1, "direccion":"Belgrano 750", "localidad":"Cañuelas", "provincia":"Buenos Aires"}
+    ]
+}

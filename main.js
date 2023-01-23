@@ -158,3 +158,25 @@ const calcularTotal = () => {
     })
     total.innerHTML = `Total: $${totalCompra}`;
 }
+
+//ubicaciones
+
+fetch('./data/localidad.json')
+    .then((res)=>res.json())
+    .then((data)=>{
+        const ubicaciones = data.ubicacion
+        const ubicacionesCont = document.getElementById("contenedorUbicaciones")
+        console.log(ubicacionesCont);
+        ubicaciones.forEach(producto=> {
+            const card = document.createElement("div");
+            card.classList.add("col-xl-3", "col-md-6", "col-xs-12");
+            card.innerHTML= `
+                <div class="card">
+                <h2>${producto.direccion}</h2>
+                <h2>${producto.localidad}</h2>
+                <h2>${producto.provincia}</h2>
+                </div>
+            `
+        ubicacionesCont.appendChild(card);
+        })
+    })
